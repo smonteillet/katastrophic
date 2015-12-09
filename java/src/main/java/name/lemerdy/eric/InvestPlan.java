@@ -39,19 +39,17 @@ public class InvestPlan
 				}
 				for (int bM = 1; bM <= MAX_HOURS; bM++)
 				{
-					 for (int sM = 1; sM <= 12; sM++)
+					 for (int sM = bM + 1; sM <= 12; sM++)
 					 {
 						  Integer the_bal = Integer.MIN_VALUE;
-						  if (bM < sM)
-						  {
-								int sellPrice = mList.get(bM - 1);
-								Integer quantity = amount / sellPrice;
-								the_bal = -quantity * sellPrice;
-								Integer priceBuy = mList.get(sM - 1);
-								int rev = quantity * priceBuy;
-								the_bal += rev;
-						  }
+						  int sellPrice = mList.get(bM - 1);
+						  Integer quantity = amount / sellPrice;
+						  the_bal = -quantity * sellPrice;
+						  Integer priceBuy = mList.get(sM - 1);
+						  int rev = quantity * priceBuy;
+						  the_bal += rev;
 						  Integer currentProfit = the_bal;
+						 
 						  if (currentProfit != null && currentProfit > limitProfit)
 						  {
 								limitProfit = currentProfit;
