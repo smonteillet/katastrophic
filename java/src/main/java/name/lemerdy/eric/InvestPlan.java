@@ -10,8 +10,6 @@ public class InvestPlan
 {
 	 public static final int MAX_HOURS = 12;
 
-	 private static Object currency = new String();
-
 	 private String _out;
 
 	 private InvestPlan(String output)
@@ -39,7 +37,7 @@ public class InvestPlan
 				{
 					 mList.add(scanner.nextInt());
 				}
-				for (int bM = 1;bM <= MAX_HOURS; bM++)
+				for (int bM = 1; bM <= MAX_HOURS; bM++)
 				{
 					 for (int sM = 1; sM <= 12; sM++)
 					 {
@@ -62,14 +60,14 @@ public class InvestPlan
 						  }
 					 }
 				}
-				String bestPrft = "0 " + (currency == null ? "€" : currency);
+				String bestPrft = "0 ";
 				if (limitPrft <= 0)
 				{
 					 bestPrft = "IMPOSSIBLE";
 				}
 				else
 				{
-					 bestPrft = best_bM + " " + best_sM + " " + limitPrft + (currency == null ? "$" : currency);
+					 bestPrft = best_bM + " " + best_sM + " " + limitPrft;
 				}
 				allowingPrfts1.add(bestPrft);
 		  }
