@@ -39,12 +39,10 @@ public class InvestPlan
 				{
 					 mList.add(scanner.nextInt());
 				}
-				for (int i = 1; i <= MAX_HOURS; i++)
+				for (int bM = 1;bM <= MAX_HOURS; bM++)
 				{
-					 for (int j = 1; j <= 12; j++)
+					 for (int sM = 1; sM <= 12; sM++)
 					 {
-						  int bM = i;
-						  int sM = j;
 						  Integer the_bal = Integer.MIN_VALUE;
 						  if (bM < sM)
 						  {
@@ -59,8 +57,8 @@ public class InvestPlan
 						  if (curr_prft != null && curr_prft > limitPrft)
 						  {
 								limitPrft = curr_prft;
-								best_bM = i;
-								best_sM = j;
+								best_bM = bM;
+								best_sM = sM;
 						  }
 					 }
 				}
