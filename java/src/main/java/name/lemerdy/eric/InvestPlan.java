@@ -60,7 +60,7 @@ public class InvestPlan
 						  }
 					 }
 				}
-				String bestPrft = "0 ";
+				String bestPrft;
 				if (limitPrft <= 0)
 				{
 					 bestPrft = "IMPOSSIBLE";
