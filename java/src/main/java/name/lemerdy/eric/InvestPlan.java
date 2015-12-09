@@ -43,13 +43,9 @@ public class InvestPlan
 					 {
 						  int sellPrice = mList.get(bM - 1);
 						  int quantity = amount / sellPrice;
-						  int the_bal = -quantity * sellPrice;
 						  int priceBuy = mList.get(sM - 1);
-						  int rev = quantity * priceBuy;
-						  the_bal += rev;
-						  Integer currentProfit = the_bal;
-
-						  if (currentProfit != null && currentProfit > limitProfit)
+						  int currentProfit = -quantity * sellPrice + quantity * priceBuy;
+						  if (currentProfit > limitProfit)
 						  {
 								limitProfit = currentProfit;
 								best_bM = bM;
