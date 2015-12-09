@@ -32,7 +32,7 @@ public class InvestPlan
 				Integer best_sM = Integer.MIN_VALUE;
 
 				// Max profit is set to min value for initialization purposes.
-				Integer limitPrft = Integer.MIN_VALUE;
+				Integer limitProfit = Integer.MIN_VALUE;
 				for (int i = 1; i <= 12; i++)
 				{
 					 mList.add(scanner.nextInt());
@@ -47,27 +47,27 @@ public class InvestPlan
 								int sellPrice = mList.get(bM - 1);
 								Integer quantity = amount / sellPrice;
 								the_bal = -quantity * sellPrice;
-								Integer prce_buy = mList.get(sM - 1);
-								int rev = quantity * prce_buy;
+								Integer priceBuy = mList.get(sM - 1);
+								int rev = quantity * priceBuy;
 								the_bal += rev;
 						  }
-						  Integer curr_prft = the_bal;
-						  if (curr_prft != null && curr_prft > limitPrft)
+						  Integer currentProfit = the_bal;
+						  if (currentProfit != null && currentProfit > limitProfit)
 						  {
-								limitPrft = curr_prft;
+								limitProfit = currentProfit;
 								best_bM = bM;
 								best_sM = sM;
 						  }
 					 }
 				}
 				String bestPrft;
-				if (limitPrft <= 0)
+				if (limitProfit <= 0)
 				{
 					 bestPrft = "IMPOSSIBLE";
 				}
 				else
 				{
-					 bestPrft = best_bM + " " + best_sM + " " + limitPrft;
+					 bestPrft = best_bM + " " + best_sM + " " + limitProfit;
 				}
 				allowingPrfts1.add(bestPrft);
 		  }
