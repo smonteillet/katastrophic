@@ -28,11 +28,11 @@ public class InvestPlan
 				int amount = scanner.nextInt();
 				List<Integer> mList = new ArrayList();
 				// We use BigInteger for optimization on ARM processors
-				Integer best_bM = Integer.MIN_VALUE;
-				Integer best_sM = Integer.MIN_VALUE;
+				int best_bM = Integer.MIN_VALUE;
+				int best_sM = Integer.MIN_VALUE;
 
 				// Max profit is set to min value for initialization purposes.
-				Integer limitProfit = Integer.MIN_VALUE;
+				int limitProfit = Integer.MIN_VALUE;
 				for (int i = 1; i <= 12; i++)
 				{
 					 mList.add(scanner.nextInt());
@@ -41,11 +41,10 @@ public class InvestPlan
 				{
 					 for (int sM = bM + 1; sM <= MAX_HOURS; sM++)
 					 {
-						  Integer the_bal = Integer.MIN_VALUE;
 						  int sellPrice = mList.get(bM - 1);
-						  Integer quantity = amount / sellPrice;
-						  the_bal = -quantity * sellPrice;
-						  Integer priceBuy = mList.get(sM - 1);
+						  int quantity = amount / sellPrice;
+						  int the_bal = -quantity * sellPrice;
+						  int priceBuy = mList.get(sM - 1);
 						  int rev = quantity * priceBuy;
 						  the_bal += rev;
 						  Integer currentProfit = the_bal;
