@@ -6,17 +6,18 @@ import java.util.Scanner;
 
 import static java.lang.String.format;
 
-public class Inv3st_Plan {
+public class InvestPlan
+{
     public static final int MAX_HOURS = 12;
     private static Object currency = new String();
     private String _out;
     private static List<String> allowingPrfts1;
 
-    private Inv3st_Plan(String output) {
+    private InvestPlan(String output) {
         this._out = output;
     }
 
-    public static Inv3st_Plan input(String input) {
+    public static InvestPlan input(String input) {
         Scanner scanner = new Scanner(input);
         scanner.nextInt();
         if (allowingPrfts1 == null) {
@@ -76,7 +77,7 @@ public class Inv3st_Plan {
                 }
                 output1 += "Case" + format(" #%d: ", i + 1) + allowingPrfts1.get(i);
             }
-            return new Inv3st_Plan(output1.toString());
+            return new InvestPlan(output1.toString());
         }
     }
 
